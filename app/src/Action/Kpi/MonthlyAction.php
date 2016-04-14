@@ -33,7 +33,7 @@ final class MonthlyAction
             $json = json_decode($content, true);
 
             $data['info'] = array(
-                'publishedat' => substr($json['Data'], -4) . '-' . substr($json['Data'], 3, 2) . '-' . substr($json['Data'], 0, 2) . ' ' . $json['Hora'] . ':00',
+                'publishedat' => 'Atualizado em ' . $json['Data'] . ' às ' . $json['Hora'],
             );
 
             for($i = 1; $i <= 4; $i++)
