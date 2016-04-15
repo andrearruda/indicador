@@ -45,7 +45,10 @@ $container[App\Action\HomeAction::class] = function ($c) {
     return new App\Action\HomeAction($c->get('view'), $c->get('logger'));
 };
 
-
 $container[App\Action\Kpi\MonthlyAction::class] = function ($c) {
     return new App\Action\Kpi\MonthlyAction($c->get('view'), $c->get('logger'));
+};
+
+$container[App\Action\Kpi\DailyAction::class] = function ($c) {
+    return new App\Action\Kpi\DailyAction($c->get('view'), $c->get('logger'));
 };
