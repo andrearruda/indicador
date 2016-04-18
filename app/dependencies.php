@@ -52,3 +52,7 @@ $container[App\Action\Kpi\MonthlyAction::class] = function ($c) {
 $container[App\Action\Kpi\DailyAction::class] = function ($c) {
     return new App\Action\Kpi\DailyAction($c->get('view'), $c->get('logger'));
 };
+
+$container[App\Action\Kpi\ShiftAction::class] = function ($c) {
+    return new App\Action\Kpi\ShiftAction($c->get('view'), $c->get('logger'));
+};

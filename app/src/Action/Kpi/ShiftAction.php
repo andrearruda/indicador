@@ -10,7 +10,7 @@ use Thapp\XmlBuilder\XmlBuilder;
 use Thapp\XmlBuilder\Normalizer;
 use FileSystemCache;
 
-final class DailyAction
+final class ShiftAction
 {
     private $view, $logger, $url;
 
@@ -41,8 +41,6 @@ final class DailyAction
             {
                 $data['lines']['fl' . $i] = $json['FL' . $i];
             }
-
-            $data['lines']['geral'] = $json['Geral'];
 
             foreach($data['lines'] as $key => $lines)
             {
