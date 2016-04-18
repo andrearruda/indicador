@@ -12,9 +12,7 @@ use FileSystemCache;
 
 final class DailyAction
 {
-    private $view;
-    private $logger;
-    private $url = 'http://conteudo.farolsign.com.br/custom/nivea/indicadores/json/diario.php';
+    private $view, $logger, $url;
 
     public function __construct(Twig $view, LoggerInterface $logger)
     {
@@ -24,6 +22,9 @@ final class DailyAction
 
     public function __invoke(Request $request, Response $response, $args)
     {
+        $params = $request->getQueryParams();
+        $this->url = $params['url'];
+
         $data = array();
 
         $content = @file_get_contents($this->url);
